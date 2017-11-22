@@ -1,15 +1,18 @@
 <resources>
-        <string name="app_name">Todo</string>
-        <string name="next">Next</string>
-        <string name="prev">Prev</string>
-        <string name="todo_list">Todo list!</string>
-
-        <string-array name="todo">
+    <string name="app_name">Todo</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+    <string name="todo_list">Todo list!</string>
+    <string name="detail">Detail</string>
+    <string name="checkbox">Is complete?</string>
+    <string name="request_code_mismatch">requestCode in intent does not match the parent requestCode</string>
+    <string name="back_button_pressed">Back button pressed</string>
+    <string-array name="todo">
             <item>Deliver a presentation on image processing</item>
             <item>Android demo</item>
             <item>Write a 5000 word report</item>
             <item>Write a 1500 word report</item>
             <item>Sit a 3 hour written exam</item>
             <item>Do a todo app</item>
-        </string-array>
+    </string-array>
 </resources>
