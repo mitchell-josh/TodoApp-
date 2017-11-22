@@ -24,6 +24,12 @@
         android:layout_height="@android:dimen/notification_large_icon_height"
         android:text="@string/todo_detail_label"/>
 
+    <EditText
+        android:id="@+id/todo_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/todo_detail_hint"/>
+
     <Button
         android:id="@+id/todo_date"
         android:layout_width="match_parent"
@@ -35,5 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/todo_complete_label"/>
+
+    <CheckBox
+        android:id="@+id/todo_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/todo_delete_label"/>
 
 </LinearLayout>

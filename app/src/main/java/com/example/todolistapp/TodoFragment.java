@@ -23,6 +23,7 @@ public class TodoFragment extends Fragment {
 
     private Todo mTodo;
     private EditText mEditTextTitle;
+    private EditText mEditTextDetail;
     private Button mButtonDate;
     private CheckBox mCheckBoxIsComplete;
 
@@ -39,7 +40,6 @@ public class TodoFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-//        UUID todoId = (UUID) getArguments().getSerializable(ARG_TODO_ID);
         UUID todoId = (UUID) getActivity()
                 .getIntent().getSerializableExtra(TodoActivity.EXTRA_TODO_ID);
         mTodo = TodoModel.get(getActivity()).getTodo(todoId);
@@ -70,6 +70,25 @@ public class TodoFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 // This line is intentionally left blank
+            }
+        });
+
+        mEditTextDetail = (EditText) view.findViewById(R.id.todo_detail);
+        mEditTextDetail.setText(mTodo.getDetail());
+        mEditTextDetail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //Left blank
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mTodo.setDetail(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //Leave blank
             }
         });
 

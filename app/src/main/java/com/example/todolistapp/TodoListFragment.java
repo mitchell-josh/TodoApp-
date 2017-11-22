@@ -83,6 +83,7 @@ public class TodoListFragment extends Fragment {
         TodoModel todoModel = TodoModel.get(getContext());
         todos = todoModel.getTodos();
 
+
         if (mTodoAdapter == null) {
             mTodoAdapter = new TodoAdapter(todos);
             mTodoRecyclerView.setAdapter(mTodoAdapter);

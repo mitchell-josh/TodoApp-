@@ -3,6 +3,7 @@ package com.example.todolistapp;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.UUID;
 
 public class TodoModel {
@@ -47,15 +48,24 @@ public class TodoModel {
     }
 
     public ArrayList<Todo> getTodos() {
-
         return mTodoList;
-
     }
 
     public void addTodo(Todo todo){
 
         mTodoList.add(todo);
 
+    }
+
+    public void removeTodos(){
+        Iterator<Todo> todoIterator = mTodoList.iterator();
+
+        while(todoIterator.hasNext()){
+                Todo iteratorTodo = todoIterator.next();
+
+                if(iteratorTodo.isComplete())
+                    todoIterator.remove();
+        }
     }
 
 }
