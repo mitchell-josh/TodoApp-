@@ -11,11 +11,16 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] mTodos;
     private int mTodoIndex;
+    private final String TODO_INDEX_KEY = "com.example.todoIndex";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(savedInstanceState != null){
+            mTodoIndex = savedInstanceState.getInt(TODO_INDEX_KEY);
+        }
 
         final TextView todoTextView;
         todoTextView = (TextView) findViewById(R.id.textViewTodo);
@@ -56,4 +61,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+
+        outState.putInt(TODO_INDEX_KEY, mTodoIndex);
+
+        super.onSaveInstanceState(outState);
+    }
+
+
 }
